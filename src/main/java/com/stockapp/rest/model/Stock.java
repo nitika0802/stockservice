@@ -9,11 +9,18 @@ public class Stock {
     private double currentPrice;
     private Timestamp lastUpdate;
 
+    public Stock(){
+
+    }
     public Stock(int id, String name, double currentPrice, Timestamp lastUpdate) {
         this.id = id;
         this.name = name;
         this.currentPrice = currentPrice;
         this.lastUpdate = lastUpdate;
+    }
+    public Stock(int id, double currentPrice){
+        this.id = id;
+        this.currentPrice = currentPrice;
     }
 
     public int getId() {

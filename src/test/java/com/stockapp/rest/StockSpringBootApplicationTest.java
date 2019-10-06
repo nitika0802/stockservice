@@ -1,9 +1,7 @@
 package com.stockapp.rest;
 
-import com.stockapp.rest.controller.StockController;
 import com.stockapp.rest.dao.StockDao;
 import com.stockapp.rest.model.Stock;
-import com.stockapp.rest.model.Stocks;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -11,11 +11,11 @@ public class StockDao {
     private static Stocks stocks = new Stocks();
 
     static {
-        stocks.getStockList().add(new Stock(1, "Tata Motors", 149.50, new Timestamp(1569950608)));
-        stocks.getStockList().add(new Stock(2, "State Bank of India", 180.00, new Timestamp(1569950700)));
-        stocks.getStockList().add(new Stock(3, "Infosys Limited", 550.20, new Timestamp(1569950728)));
-        stocks.getStockList().add(new Stock(4, "TV 18 Broadcast", 82.10, new Timestamp(1569950751)));
-        stocks.getStockList().add(new Stock(5, "ABN AMRO", 865.40, new Timestamp(1569950786)));
+        stocks.getStockList().add(new Stock(1, "Tata Motors", 149.50, new Timestamp(System.currentTimeMillis())));
+        stocks.getStockList().add(new Stock(2, "State Bank of India", 180.00, new Timestamp(System.currentTimeMillis())));
+        stocks.getStockList().add(new Stock(3, "Infosys Limited", 550.20, new Timestamp(System.currentTimeMillis())));
+        stocks.getStockList().add(new Stock(4, "TV 18 Broadcast", 82.10, new Timestamp(System.currentTimeMillis())));
+        stocks.getStockList().add(new Stock(5, "ABN AMRO", 865.40, new Timestamp(System.currentTimeMillis())));
     }
 
     public Stocks getAllStocks() {

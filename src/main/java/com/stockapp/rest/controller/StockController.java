@@ -26,6 +26,7 @@ public class StockController {
     public Stock getStock(@PathVariable int id){
         return stockDao.getStockBasedOnId(id);
     }
+
     @PostMapping(path="",consumes = "application/json",produces = "application/json")
     public ResponseEntity<Object> addStock(@RequestBody Stock stock){
         int id = stockDao.getAllStocks().getStockList().size() + 1;

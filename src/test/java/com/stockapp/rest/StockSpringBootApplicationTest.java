@@ -54,4 +54,21 @@ public class StockSpringBootApplicationTest {
         double currentPrice = stockDao.getStockBasedOnId(1).getCurrentPrice();
         Assert.assertEquals(182.40,currentPrice,0);
 }
+
+@Test
+    public void testGetStockListSuccess() throws URISyntaxException{
+        final String baseURL = "http://localhost:" + randomServerPort + "/api/stocks";
+        URI uri = new URI(baseURL);
+        String result = this.testRestTemplate.getForObject(uri,String.class);
+        String assertString = "{\"stockList\":[{\"id\":1,\"name\":\"Tata Motors\",\"currentPrice\":149.5,\"lastUpdate\":\"1970-01-19T04:05:50.608+0000\"},{\"id\":2,\"name\":\"State Bank of India\",\"currentPrice\":180.0,\"lastUpdate\":\"1970-01-19T04:05:50.700+0000\"},{\"id\":3,\"name\":\"Infosys Limited\",\"currentPrice\":550.2,\"lastUpdate\":\"1970-01-19T04:05:50.728+0000\"},{\"id\":4,\"name\":\"TV 18 Broadcast\",\"currentPrice\":82.1,\"lastUpdate\":\"1970-01-19T04:05:50.751+0000\"},{\"id\":5,\"name\":\"ABN AMRO\",\"currentPrice\":865.4,\"lastUpdate\":\"1970-01-19T04:05:50.786+0000\"}]}";
+        Assert.assertEquals(assertString,result);
+}
+
+@Test
+    public void testGetStockSuccess() throws URISyntaxException{
+        final String baseURL = "http://localhost:" + randomServerPort + "/api/stocks/1";
+        URI uri = new URI(baseURL);
+        String result = this.testRestTemplate.getForObject(uri,String.class);
+        System.out.println(result);
+}
 }

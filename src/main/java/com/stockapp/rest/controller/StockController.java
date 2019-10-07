@@ -20,6 +20,10 @@ public class StockController {
     @Autowired
     private StockDao stockDao;
 
+    /**
+     * This maps to the GET request to fetch the list of stocks. The result is in format application/json
+     * @return list of stocks
+     */
     @GetMapping(path = "", produces = "application/json")
     public Stocks getStocks(){
         try{
@@ -30,6 +34,11 @@ public class StockController {
         }
     }
 
+    /**
+     * Request mapping for GET request to fetch a stock object based on ID
+     * @param id
+     * @return Stock object
+     */
     @GetMapping(path = "/{id}", produces = "application/json")
     public Stock getStock(@PathVariable int id){
         try {
@@ -40,6 +49,11 @@ public class StockController {
         }
     }
 
+    /**
+     * Request mapping for POST request to add a stock to the stock list. Accepts name and current price of the stock in json format
+     * @param stock
+     * @return ResponseEntity
+     */
     @PostMapping(path="",consumes = "application/json",produces = "application/json")
     public ResponseEntity<Object> addStock(@RequestBody Stock stock){
         try{
@@ -56,6 +70,12 @@ public class StockController {
         }
     }
 
+    /**
+     * This is the request mapping for PUT request to update the current price of a stock. Accepts the id and current price of the stock in json format
+     * @param id
+     * @param stock
+     * @return ResponseEntity object
+     */
     @PutMapping(path="/{id}",consumes = "application/json",produces = "application/json")
     public ResponseEntity<Object> updateStock(@PathVariable int id, @RequestBody Stock stock){
         try{

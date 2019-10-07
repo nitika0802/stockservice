@@ -28,7 +28,11 @@ public class StockSpringBootApplicationTest {
 @Autowired
     private StockDao stockDao;
 
-@Test
+    /**
+     * This is the test method for validating if add stock operation is successfully happening
+     * @throws URISyntaxException
+     */
+    @Test
     public void testAddStockSuccess() throws URISyntaxException{
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/stocks";
         URI uri = new URI(baseUrl);
@@ -40,7 +44,11 @@ public class StockSpringBootApplicationTest {
         Assert.assertEquals(201,result.getStatusCodeValue());
 }
 
-@Test
+    /**
+     * This is the test method which validates that update stock action is successful
+     * @throws URISyntaxException
+     */
+    @Test
     public void testUpdateStockSuccess() throws URISyntaxException{
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/stocks/1";
         URI uri = new URI(baseUrl);
@@ -53,7 +61,11 @@ public class StockSpringBootApplicationTest {
         Assert.assertEquals(182.40,currentPrice,0);
 }
 
-@Test
+    /**
+     * This is a test method which validates get stock list action
+     * @throws URISyntaxException
+     */
+    @Test
     public void testGetStockListSuccess() throws URISyntaxException{
         final String baseURL = "http://localhost:" + randomServerPort + "/api/stocks";
         URI uri = new URI(baseURL);
@@ -62,7 +74,11 @@ public class StockSpringBootApplicationTest {
         Assert.assertEquals(assertString,result);
 }
 
-@Test
+    /**
+     * This is a test method which validates the get stock based on ID action
+     * @throws URISyntaxException
+     */
+    @Test
     public void testGetStockSuccess() throws URISyntaxException{
         final String baseURL = "http://localhost:" + randomServerPort + "/api/stocks/1";
         URI uri = new URI(baseURL);

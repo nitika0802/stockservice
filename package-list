@@ -1,0 +1,5 @@
+com.stockapp.rest
+com.stockapp.rest.controller
+com.stockapp.rest.dao
+com.stockapp.rest.exception
+com.stockapp.rest.model
